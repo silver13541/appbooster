@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-AppBooster-AppBoosterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AppBooster-AppBoosterTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		ADD833F02A8288BE0011FFCF /* libRNUssdDial.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD833EF2A82889D0011FFCF /* libRNUssdDial.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = AppBooster;
+		};
+		ADD833EE2A82889D0011FFCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADD833EA2A82889C0011FFCF /* RNUssdDial.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNUssdDial;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -43,6 +51,7 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-AppBooster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppBooster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AppBooster/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-AppBooster-AppBoosterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBooster-AppBoosterTests.release.xcconfig"; path = "Target Support Files/Pods-AppBooster-AppBoosterTests/Pods-AppBooster-AppBoosterTests.release.xcconfig"; sourceTree = "<group>"; };
+		ADD833EA2A82889C0011FFCF /* RNUssdDial.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNUssdDial.xcodeproj; path = "../node_modules/react-native-ussd-dial/ios/RNUssdDial.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -60,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-AppBooster.a in Frameworks */,
+				ADD833F02A8288BE0011FFCF /* libRNUssdDial.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +119,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				ADD833EA2A82889C0011FFCF /* RNUssdDial.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -133,6 +144,14 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* AppBooster.app */,
 				00E356EE1AD99517003FC87E /* AppBoosterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADD833EB2A82889C0011FFCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADD833EF2A82889D0011FFCF /* libRNUssdDial.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,6 +241,12 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = ADD833EB2A82889C0011FFCF /* Products */;
+					ProjectRef = ADD833EA2A82889C0011FFCF /* RNUssdDial.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* AppBooster */,
@@ -229,6 +254,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		ADD833EF2A82889D0011FFCF /* libRNUssdDial.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNUssdDial.a;
+			remoteRef = ADD833EE2A82889D0011FFCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
