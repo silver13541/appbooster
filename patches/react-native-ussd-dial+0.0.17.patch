@@ -1,8 +1,28 @@
 diff --git a/node_modules/react-native-ussd-dial/android/build.gradle b/node_modules/react-native-ussd-dial/android/build.gradle
-index a28f0dd..59d8ab5 100644
+index a28f0dd..e2c445a 100644
 --- a/node_modules/react-native-ussd-dial/android/build.gradle
 +++ b/node_modules/react-native-ussd-dial/android/build.gradle
-@@ -31,6 +31,6 @@ repositories {
+@@ -1,15 +1,19 @@
+ 
+ buildscript {
++    ext.kotlin_version = '1.6.21'
++
+     repositories {
+         jcenter()
+     }
+ 
+     dependencies {
+         classpath 'com.android.tools.build:gradle:1.3.1'
++        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+     }
+ }
+ 
+ apply plugin: 'com.android.library'
++apply plugin: 'kotlin-android'
+ 
+ android {
+     compileSdkVersion 23
+@@ -31,6 +35,6 @@ repositories {
  }
  
  dependencies {
@@ -10,18 +30,17 @@ index a28f0dd..59d8ab5 100644
 +    implementation 'com.facebook.react:react-native:+'
  }
    
-\ No newline at end of file
-diff --git a/node_modules/react-native-ussd-dial/android/build/.transforms/e569596f8625802544b56255fc10d53e/results.bin b/node_modules/react-native-ussd-dial/android/build/.transforms/e569596f8625802544b56255fc10d53e/results.bin
+diff --git a/node_modules/react-native-ussd-dial/android/build/.transforms/56973a7553687a9859ca2198b94abf93/results.bin b/node_modules/react-native-ussd-dial/android/build/.transforms/56973a7553687a9859ca2198b94abf93/results.bin
 new file mode 100644
 index 0000000..0d259dd
 --- /dev/null
-+++ b/node_modules/react-native-ussd-dial/android/build/.transforms/e569596f8625802544b56255fc10d53e/results.bin
++++ b/node_modules/react-native-ussd-dial/android/build/.transforms/56973a7553687a9859ca2198b94abf93/results.bin
 @@ -0,0 +1 @@
 +o/classes
-diff --git a/node_modules/react-native-ussd-dial/android/build/.transforms/e569596f8625802544b56255fc10d53e/transformed/classes/classes.dex b/node_modules/react-native-ussd-dial/android/build/.transforms/e569596f8625802544b56255fc10d53e/transformed/classes/classes.dex
+diff --git a/node_modules/react-native-ussd-dial/android/build/.transforms/56973a7553687a9859ca2198b94abf93/transformed/classes/classes.dex b/node_modules/react-native-ussd-dial/android/build/.transforms/56973a7553687a9859ca2198b94abf93/transformed/classes/classes.dex
 new file mode 100644
-index 0000000..4f0c881
-Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/.transforms/e569596f8625802544b56255fc10d53e/transformed/classes/classes.dex differ
+index 0000000..3f5db30
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/.transforms/56973a7553687a9859ca2198b94abf93/transformed/classes/classes.dex differ
 diff --git a/node_modules/react-native-ussd-dial/android/build/generated/source/buildConfig/debug/com/royceinitiative/RNUssdDial/BuildConfig.java b/node_modules/react-native-ussd-dial/android/build/generated/source/buildConfig/debug/com/royceinitiative/RNUssdDial/BuildConfig.java
 new file mode 100644
 index 0000000..42258f0
@@ -98,7 +117,7 @@ index 0000000..9e26dfe
 \ No newline at end of file
 diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/compile_library_classes_jar/debug/classes.jar b/node_modules/react-native-ussd-dial/android/build/intermediates/compile_library_classes_jar/debug/classes.jar
 new file mode 100644
-index 0000000..a313c0a
+index 0000000..caa24c3
 Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/intermediates/compile_library_classes_jar/debug/classes.jar differ
 diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/compile_r_class_jar/debug/R.jar b/node_modules/react-native-ussd-dial/android/build/intermediates/compile_r_class_jar/debug/R.jar
 new file mode 100644
@@ -1999,11 +2018,11 @@ index 0000000..5f8849a
 \ No newline at end of file
 diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/incremental/packageDebugResources/compile-file-map.properties b/node_modules/react-native-ussd-dial/android/build/intermediates/incremental/packageDebugResources/compile-file-map.properties
 new file mode 100644
-index 0000000..26dbaa6
+index 0000000..5d8a710
 --- /dev/null
 +++ b/node_modules/react-native-ussd-dial/android/build/intermediates/incremental/packageDebugResources/compile-file-map.properties
 @@ -0,0 +1 @@
-+#Tue Aug 08 18:14:34 SAMT 2023
++#Fri Aug 11 00:05:00 SAMT 2023
 diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/incremental/packageDebugResources/merger.xml b/node_modules/react-native-ussd-dial/android/build/intermediates/incremental/packageDebugResources/merger.xml
 new file mode 100644
 index 0000000..ca505c5
@@ -2017,14 +2036,6 @@ diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/jav
 new file mode 100644
 index 0000000..4e95a3d
 Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/intermediates/javac/debug/classes/com/royceinitiative/RNUssdDial/BuildConfig.class differ
-diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/javac/debug/classes/com/royceinitiative/RNUssdDial/DialerModule.class b/node_modules/react-native-ussd-dial/android/build/intermediates/javac/debug/classes/com/royceinitiative/RNUssdDial/DialerModule.class
-new file mode 100644
-index 0000000..491ccf1
-Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/intermediates/javac/debug/classes/com/royceinitiative/RNUssdDial/DialerModule.class differ
-diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/javac/debug/classes/com/royceinitiative/RNUssdDial/DialerPackage.class b/node_modules/react-native-ussd-dial/android/build/intermediates/javac/debug/classes/com/royceinitiative/RNUssdDial/DialerPackage.class
-new file mode 100644
-index 0000000..5742453
-Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/intermediates/javac/debug/classes/com/royceinitiative/RNUssdDial/DialerPackage.class differ
 diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/javac/debug/classes/com/royceinitiative/RNUssdDial/RNUssdDialModule.class b/node_modules/react-native-ussd-dial/android/build/intermediates/javac/debug/classes/com/royceinitiative/RNUssdDial/RNUssdDialModule.class
 new file mode 100644
 index 0000000..be009e1
@@ -2033,6 +2044,10 @@ diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/jav
 new file mode 100644
 index 0000000..a0c7d8c
 Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/intermediates/javac/debug/classes/com/royceinitiative/RNUssdDial/RNUssdDialPackage.class differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/library_java_res/debug/res.jar b/node_modules/react-native-ussd-dial/android/build/intermediates/library_java_res/debug/res.jar
+new file mode 100644
+index 0000000..c7cae89
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/intermediates/library_java_res/debug/res.jar differ
 diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/local_only_symbol_list/debug/R-def.txt b/node_modules/react-native-ussd-dial/android/build/intermediates/local_only_symbol_list/debug/R-def.txt
 new file mode 100644
 index 0000000..78ac5b8
@@ -2109,7 +2124,7 @@ index 0000000..32d2db3
 \ No newline at end of file
 diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar b/node_modules/react-native-ussd-dial/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar
 new file mode 100644
-index 0000000..de3053c
+index 0000000..ba5e701
 Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar differ
 diff --git a/node_modules/react-native-ussd-dial/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt b/node_modules/react-native-ussd-dial/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
 new file mode 100644
@@ -3497,6 +3512,331 @@ index 0000000..0d2a685
 +styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 +styleable ViewStubCompat android_id android_inflatedId android_layout
 +xml rn_dev_preferences
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab
+new file mode 100644
+index 0000000..679ef98
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream
+new file mode 100644
+index 0000000..1634442
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len
+new file mode 100644
+index 0000000..7202a9a
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.len
+new file mode 100644
+index 0000000..01bdaa1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at
+new file mode 100644
+index 0000000..7cb1b7a
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i
+new file mode 100644
+index 0000000..7649a07
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab
+new file mode 100644
+index 0000000..41c36ee
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream
+new file mode 100644
+index 0000000..a7cb99a
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len
+new file mode 100644
+index 0000000..2537434
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.len
+new file mode 100644
+index 0000000..01bdaa1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at
+new file mode 100644
+index 0000000..fc0e221
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i
+new file mode 100644
+index 0000000..c339c51
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab
+new file mode 100644
+index 0000000..59502fe
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream
+new file mode 100644
+index 0000000..a7cb99a
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len
+new file mode 100644
+index 0000000..2537434
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len
+new file mode 100644
+index 0000000..01bdaa1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at
+new file mode 100644
+index 0000000..5e0e7b1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i
+new file mode 100644
+index 0000000..c339c51
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab
+new file mode 100644
+index 0000000..59502fe
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream
+new file mode 100644
+index 0000000..5e96de4
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len
+new file mode 100644
+index 0000000..2537434
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len
+new file mode 100644
+index 0000000..01bdaa1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at
+new file mode 100644
+index 0000000..5e0e7b1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i
+new file mode 100644
+index 0000000..17f77d7
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab
+new file mode 100644
+index 0000000..854423a
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream
+new file mode 100644
+index 0000000..f9c582d
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len
+new file mode 100644
+index 0000000..bcd95fb
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.len
+new file mode 100644
+index 0000000..a9f80ae
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at
+new file mode 100644
+index 0000000..6154c01
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i
+new file mode 100644
+index 0000000..ee0ac5e
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab
+new file mode 100644
+index 0000000..e53350a
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream
+new file mode 100644
+index 0000000..9182eb3
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len
+new file mode 100644
+index 0000000..7202a9a
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.len
+new file mode 100644
+index 0000000..01bdaa1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at
+new file mode 100644
+index 0000000..858e9bc
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i
+new file mode 100644
+index 0000000..20e814e
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab
+new file mode 100644
+index 0000000..fd26586
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream
+new file mode 100644
+index 0000000..b425921
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len
+new file mode 100644
+index 0000000..1cf91b4
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.len
+new file mode 100644
+index 0000000..01bdaa1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at
+new file mode 100644
+index 0000000..9886391
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i
+new file mode 100644
+index 0000000..13aca7b
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab
+new file mode 100644
+index 0000000..fce0369
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream
+new file mode 100644
+index 0000000..a7cb99a
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len
+new file mode 100644
+index 0000000..2537434
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len
+new file mode 100644
+index 0000000..01bdaa1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at
+new file mode 100644
+index 0000000..fdc18fe
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i
+new file mode 100644
+index 0000000..c339c51
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab
+new file mode 100644
+index 0000000..2ceb12b
+--- /dev/null
++++ b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab
+@@ -0,0 +1,2 @@
++2
++0
+\ No newline at end of file
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab
+new file mode 100644
+index 0000000..3200b23
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream
+new file mode 100644
+index 0000000..9182eb3
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream.len
+new file mode 100644
+index 0000000..7202a9a
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.len
+new file mode 100644
+index 0000000..01bdaa1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at
+new file mode 100644
+index 0000000..7d30a43
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i
+new file mode 100644
+index 0000000..83c7328
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab
+new file mode 100644
+index 0000000..b3ad60c
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream
+new file mode 100644
+index 0000000..100d205
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len
+new file mode 100644
+index 0000000..ccfcbf4
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len
+new file mode 100644
+index 0000000..01bdaa1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at
+new file mode 100644
+index 0000000..5e0e7b1
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i
+new file mode 100644
+index 0000000..f768a77
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab
+new file mode 100644
+index 0000000..40d836c
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream
+new file mode 100644
+index 0000000..0878f38
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len
+new file mode 100644
+index 0000000..0032de3
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len
+new file mode 100644
+index 0000000..bba171d
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at
+new file mode 100644
+index 0000000..24dabab
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i
+new file mode 100644
+index 0000000..6b66b47
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i.len b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i.len
+new file mode 100644
+index 0000000..131e265
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i.len differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/last-build.bin b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/last-build.bin
+new file mode 100644
+index 0000000..26230e9
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/cacheable/last-build.bin differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/localstate/build-history.bin b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/localstate/build-history.bin
+new file mode 100644
+index 0000000..32609cd
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/kotlin/compileDebugKotlin/localstate/build-history.bin differ
 diff --git a/node_modules/react-native-ussd-dial/android/build/outputs/logs/manifest-merger-debug-report.txt b/node_modules/react-native-ussd-dial/android/build/outputs/logs/manifest-merger-debug-report.txt
 new file mode 100644
 index 0000000..f82595c
@@ -3530,35 +3870,164 @@ index 0000000..f82595c
 +		INJECTED from /Users/elvarhalilov/Desktop/Projects/AppBooster/node_modules/react-native-ussd-dial/android/src/main/AndroidManifest.xml
 diff --git a/node_modules/react-native-ussd-dial/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin b/node_modules/react-native-ussd-dial/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin
 new file mode 100644
-index 0000000..bb7e87d
+index 0000000..c559bce
 Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/tmp/kotlin-classes/debug/META-INF/react-native-ussd-dial_debug.kotlin_module b/node_modules/react-native-ussd-dial/android/build/tmp/kotlin-classes/debug/META-INF/react-native-ussd-dial_debug.kotlin_module
+new file mode 100644
+index 0000000..3a4e3bf
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/tmp/kotlin-classes/debug/META-INF/react-native-ussd-dial_debug.kotlin_module differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/tmp/kotlin-classes/debug/com/royceinitiative/RNUssdDial/DialerModule.class b/node_modules/react-native-ussd-dial/android/build/tmp/kotlin-classes/debug/com/royceinitiative/RNUssdDial/DialerModule.class
+new file mode 100644
+index 0000000..9aeca78
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/tmp/kotlin-classes/debug/com/royceinitiative/RNUssdDial/DialerModule.class differ
+diff --git a/node_modules/react-native-ussd-dial/android/build/tmp/kotlin-classes/debug/com/royceinitiative/RNUssdDial/DialerPackage.class b/node_modules/react-native-ussd-dial/android/build/tmp/kotlin-classes/debug/com/royceinitiative/RNUssdDial/DialerPackage.class
+new file mode 100644
+index 0000000..79ad76a
+Binary files /dev/null and b/node_modules/react-native-ussd-dial/android/build/tmp/kotlin-classes/debug/com/royceinitiative/RNUssdDial/DialerPackage.class differ
 diff --git a/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerModule.java b/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerModule.java
-index 1b661e9..586e5ab 100644
+deleted file mode 100644
+index 1b661e9..0000000
 --- a/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerModule.java
-+++ b/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerModule.java
-@@ -1,6 +1,7 @@
- package com.royceinitiative.RNUssdDial;
- 
- import com.facebook.react.bridge.Callback;
-+import com.facebook.react.bridge.Promise;
- import com.facebook.react.bridge.ReactApplicationContext;
- import com.facebook.react.bridge.ReactContextBaseJavaModule;
- import com.facebook.react.bridge.ReactMethod;
-@@ -26,12 +27,8 @@ public class DialerModule extends ReactContextBaseJavaModule {
-    }
-    //Custom function that we are going to export to JS
-    @ReactMethod
++++ /dev/null
+@@ -1,45 +0,0 @@
+-package com.royceinitiative.RNUssdDial;
+-
+-import com.facebook.react.bridge.Callback;
+-import com.facebook.react.bridge.ReactApplicationContext;
+-import com.facebook.react.bridge.ReactContextBaseJavaModule;
+-import com.facebook.react.bridge.ReactMethod;
+-
+-import android.app.PendingIntent;
+-import android.content.Context;
+-import android.content.Intent;
+-import android.net.Uri;
+-
+-public class DialerModule extends ReactContextBaseJavaModule {
+-
+-    ReactApplicationContext reactContext;
+-
+-   //constructor
+-   public DialerModule(ReactApplicationContext reactContext) {
+-       super(reactContext);
+-        this.reactContext = reactContext;
+-   }
+-   //Mandatory function getName that specifies the module name
+-   @Override
+-   public String getName() {
+-       return "Device";
+-   }
+-   //Custom function that we are going to export to JS
+-   @ReactMethod
 -   public void getDeviceName(Callback cb) {
 -       try{
 -           cb.invoke(null, android.os.Build.MODEL);
 -       }catch (Exception e){
 -           cb.invoke(e.toString(), null);
 -       }
-+   public void getDeviceName(Promise p) {
-+        p.resolve(android.os.Build.MODEL);
-    }
-    //Custom function to dial numbers
-    @ReactMethod
+-   }
+-   //Custom function to dial numbers
+-   @ReactMethod
+-   public void dialNumber(String number) {
+-        number = Uri.encode(number);
+-        String url = "tel:" + number;
+-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(url));
+-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+-        this.reactContext.startActivity(intent);
+-   }
+-}
+\ No newline at end of file
+diff --git a/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerModule.kt b/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerModule.kt
+new file mode 100644
+index 0000000..e3e6bf4
+--- /dev/null
++++ b/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerModule.kt
+@@ -0,0 +1,20 @@
++package com.royceinitiative.RNUssdDial;
++
++import com.facebook.react.bridge.NativeModule
++import com.facebook.react.bridge.ReactApplicationContext
++import com.facebook.react.bridge.ReactContext
++import com.facebook.react.bridge.ReactContextBaseJavaModule
++import com.facebook.react.bridge.ReactMethod
++import com.facebook.react.bridge.Promise
++
++class DialerModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
++
++   override fun getName(): String {
++       return "Device"
++   }
++
++   @ReactMethod
++   fun getDeviceName(p: Promise) {
++       p.resolve(android.os.Build.MODEL)
++   }
++}
+\ No newline at end of file
+diff --git a/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerPackage.java b/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerPackage.java
+deleted file mode 100644
+index 7e5d9d5..0000000
+--- a/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerPackage.java
++++ /dev/null
+@@ -1,33 +0,0 @@
+-package com.royceinitiative.RNUssdDial;
+-
+-import com.facebook.react.ReactPackage;
+-import com.facebook.react.bridge.JavaScriptModule;
+-import com.facebook.react.bridge.NativeModule;
+-import com.facebook.react.bridge.ReactApplicationContext;
+-import com.facebook.react.uimanager.ViewManager;
+-import java.util.ArrayList;
+-import java.util.Collections;
+-import java.util.List;
+-
+-public class DialerPackage implements ReactPackage {
+-
+-   @Override
+-   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
+-       return Collections.emptyList();
+-   }
+-
+-   @Override
+-   public List<NativeModule> createNativeModules(
+-           ReactApplicationContext reactContext) {
+-       List<NativeModule> modules = new ArrayList<>();
+-       //We import the module file here
+-       modules.add(new DialerModule(reactContext));
+-
+-       return modules;
+-   }
+-
+-   // Backward compatibility
+-   public List<Class<? extends JavaScriptModule>> createJSModules() {
+-       return new ArrayList<>();
+-   }
+-}
+\ No newline at end of file
+diff --git a/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerPackage.kt b/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerPackage.kt
+new file mode 100644
+index 0000000..fb5926d
+--- /dev/null
++++ b/node_modules/react-native-ussd-dial/android/src/main/java/com/royceinitiative/RNUssdDial/DialerPackage.kt
+@@ -0,0 +1,18 @@
++package com.royceinitiative.RNUssdDial;
++
++import android.view.View
++import com.facebook.react.ReactPackage
++import com.facebook.react.bridge.NativeModule
++import com.facebook.react.bridge.ReactApplicationContext
++import com.facebook.react.uimanager.ReactShadowNode
++import com.facebook.react.uimanager.ViewManager
++
++class DialerPackage : ReactPackage {
++    override fun createNativeModules(context: ReactApplicationContext): MutableList<NativeModule> {
++        return mutableListOf(DialerModule(context))
++    }
++
++    override fun createViewManagers(context: ReactApplicationContext): MutableList<ViewManager<View, ReactShadowNode<*>>> {
++        return mutableListOf()
++    }
++}
+\ No newline at end of file
 diff --git a/node_modules/react-native-ussd-dial/index.js b/node_modules/react-native-ussd-dial/index.js
 index 66669a9..83a7805 100644
 --- a/node_modules/react-native-ussd-dial/index.js
@@ -3585,51 +4054,61 @@ index 66669a9..83a7805 100644
      }
 diff --git a/node_modules/react-native-ussd-dial/ios/.DS_Store b/node_modules/react-native-ussd-dial/ios/.DS_Store
 new file mode 100644
-index 0000000..2707cf1
+index 0000000..e74229e
 Binary files /dev/null and b/node_modules/react-native-ussd-dial/ios/.DS_Store differ
+diff --git a/node_modules/react-native-ussd-dial/ios/RNUssdDial-Bridging-Header.h b/node_modules/react-native-ussd-dial/ios/RNUssdDial-Bridging-Header.h
+new file mode 100644
+index 0000000..4d7d6ec
+--- /dev/null
++++ b/node_modules/react-native-ussd-dial/ios/RNUssdDial-Bridging-Header.h
+@@ -0,0 +1,2 @@
++#import <React/RCTBridgeModule.h>
++
 diff --git a/node_modules/react-native-ussd-dial/ios/RNUssdDial.h b/node_modules/react-native-ussd-dial/ios/RNUssdDial.h
-index c4215a1..4577456 100644
+deleted file mode 100644
+index c4215a1..0000000
 --- a/node_modules/react-native-ussd-dial/ios/RNUssdDial.h
-+++ b/node_modules/react-native-ussd-dial/ios/RNUssdDial.h
-@@ -1,9 +1,4 @@
++++ /dev/null
+@@ -1,11 +0,0 @@
 -
 -#if __has_include("RCTBridgeModule.h")
 -#import "RCTBridgeModule.h"
 -#else
- #import <React/RCTBridgeModule.h>
+-#import <React/RCTBridgeModule.h>
 -#endif
- 
- @interface RNUssdDial : NSObject <RCTBridgeModule>
- 
+-
+-@interface RNUssdDial : NSObject <RCTBridgeModule>
+-
+-@end
+-  
+\ No newline at end of file
 diff --git a/node_modules/react-native-ussd-dial/ios/RNUssdDial.m b/node_modules/react-native-ussd-dial/ios/RNUssdDial.m
-index 666d919..1ca8986 100644
+index 666d919..a098b9a 100644
 --- a/node_modules/react-native-ussd-dial/ios/RNUssdDial.m
 +++ b/node_modules/react-native-ussd-dial/ios/RNUssdDial.m
-@@ -1,13 +1,16 @@
-+#import <UIKit/UIKit.h>
+@@ -1,13 +1,7 @@
++#import <React/RCTBridgeModule.h>
  
- #import "RNUssdDial.h"
+-#import "RNUssdDial.h"
++@interface RCT_EXTERN_MODULE(Device, NSObject)
  
- @implementation RNUssdDial
- 
+-@implementation RNUssdDial
+-
 -- (dispatch_queue_t)methodQueue
-+RCT_EXPORT_MODULE(Device)
-+
-+RCT_EXPORT_METHOD(getDeviceName:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
- {
+-{
 -    return dispatch_get_main_queue();
-+    UIDevice *currentDevice = [UIDevice currentDevice];
-+    resolve(currentDevice.name);
- }
+-}
 -RCT_EXPORT_MODULE()
++RCT_EXTERN_METHOD(getDeviceName:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
  
  @end
-   
+-  
+\ No newline at end of file
 diff --git a/node_modules/react-native-ussd-dial/ios/RNUssdDial.podspec b/node_modules/react-native-ussd-dial/ios/RNUssdDial.podspec
-index 18e2516..09acb1b 100644
+index 18e2516..cab1b2a 100644
 --- a/node_modules/react-native-ussd-dial/ios/RNUssdDial.podspec
 +++ b/node_modules/react-native-ussd-dial/ios/RNUssdDial.podspec
-@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
+@@ -6,13 +6,13 @@ Pod::Spec.new do |s|
    s.description  = <<-DESC
                    RNUssdDial
                     DESC
@@ -3638,11 +4117,73 @@ index 18e2516..09acb1b 100644
    s.license      = "MIT"
    # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
    s.author             = { "author" => "author@domain.cn" }
+   s.platform     = :ios, "7.0"
+   s.source       = { :git => "https://github.com/author/RNUssdDial.git", :tag => "master" }
+-  s.source_files  = "RNUssdDial/**/*.{h,m}"
++  s.source_files  = "ios/**/*.{h,m}"
+   s.requires_arc = true
+ 
+ 
+diff --git a/node_modules/react-native-ussd-dial/ios/RNUssdDial.swift b/node_modules/react-native-ussd-dial/ios/RNUssdDial.swift
+new file mode 100644
+index 0000000..876a647
+--- /dev/null
++++ b/node_modules/react-native-ussd-dial/ios/RNUssdDial.swift
+@@ -0,0 +1,11 @@
++import Foundation
++import UIKit
++
++@objc(RNUssdDial)
++class RNUssdDial: NSObject {
++
++  @objc
++  func getDeviceName(_ resolve: RCTPromiseResolveBlock, rejecter reject: RCTPromiseRejectBlock) -> Void {
++     resolve(UIDevice.current.name)
++  }
++}
 diff --git a/node_modules/react-native-ussd-dial/ios/RNUssdDial.xcodeproj/project.pbxproj b/node_modules/react-native-ussd-dial/ios/RNUssdDial.xcodeproj/project.pbxproj
-index be1536a..cbc19f6 100644
+index be1536a..27d6b21 100644
 --- a/node_modules/react-native-ussd-dial/ios/RNUssdDial.xcodeproj/project.pbxproj
 +++ b/node_modules/react-native-ussd-dial/ios/RNUssdDial.xcodeproj/project.pbxproj
-@@ -95,6 +95,7 @@
+@@ -7,6 +7,7 @@
+ 	objects = {
+ 
+ /* Begin PBXBuildFile section */
++		AD0AED962A857AA000C3720F /* RNUssdDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0AED952A857AA000C3720F /* RNUssdDial.swift */; };
+ 		B3E7B58A1CC2AC0600A0062D /* RNUssdDial.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNUssdDial.m */; };
+ /* End PBXBuildFile section */
+ 
+@@ -24,7 +25,8 @@
+ 
+ /* Begin PBXFileReference section */
+ 		134814201AA4EA6300B7C361 /* libRNUssdDial.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNUssdDial.a; sourceTree = BUILT_PRODUCTS_DIR; };
+-		B3E7B5881CC2AC0600A0062D /* RNUssdDial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUssdDial.h; sourceTree = "<group>"; };
++		AD0AED942A857A9F00C3720F /* RNUssdDial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNUssdDial-Bridging-Header.h"; sourceTree = "<group>"; };
++		AD0AED952A857AA000C3720F /* RNUssdDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNUssdDial.swift; sourceTree = "<group>"; };
+ 		B3E7B5891CC2AC0600A0062D /* RNUssdDial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUssdDial.m; sourceTree = "<group>"; };
+ /* End PBXFileReference section */
+ 
+@@ -50,9 +52,10 @@
+ 		58B511D21A9E6C8500147676 = {
+ 			isa = PBXGroup;
+ 			children = (
+-				B3E7B5881CC2AC0600A0062D /* RNUssdDial.h */,
++				AD0AED952A857AA000C3720F /* RNUssdDial.swift */,
+ 				B3E7B5891CC2AC0600A0062D /* RNUssdDial.m */,
+ 				134814211AA4EA7D00B7C361 /* Products */,
++				AD0AED942A857A9F00C3720F /* RNUssdDial-Bridging-Header.h */,
+ 			);
+ 			sourceTree = "<group>";
+ 		};
+@@ -87,6 +90,7 @@
+ 				TargetAttributes = {
+ 					58B511DA1A9E6C8500147676 = {
+ 						CreatedOnToolsVersion = 6.1.1;
++						LastSwiftMigration = 1430;
+ 					};
+ 				};
+ 			};
+@@ -95,6 +99,7 @@
  			developmentRegion = English;
  			hasScannedForEncodings = 0;
  			knownRegions = (
@@ -3650,27 +4191,77 @@ index be1536a..cbc19f6 100644
  				en,
  			);
  			mainGroup = 58B511D21A9E6C8500147676;
-@@ -204,10 +205,11 @@
+@@ -112,6 +117,7 @@
+ 			isa = PBXSourcesBuildPhase;
+ 			buildActionMask = 2147483647;
+ 			files = (
++				AD0AED962A857AA000C3720F /* RNUssdDial.swift in Sources */,
+ 				B3E7B58A1CC2AC0600A0062D /* RNUssdDial.m in Sources */,
+ 			);
+ 			runOnlyForDeploymentPostprocessing = 0;
+@@ -156,6 +162,7 @@
+ 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+ 				GCC_WARN_UNUSED_FUNCTION = YES;
+ 				GCC_WARN_UNUSED_VARIABLE = YES;
++				HEADER_SEARCH_PATHS = "";
+ 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+ 				MTL_ENABLE_DEBUG_INFO = YES;
+ 				ONLY_ACTIVE_ARCH = YES;
+@@ -193,6 +200,7 @@
+ 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+ 				GCC_WARN_UNUSED_FUNCTION = YES;
+ 				GCC_WARN_UNUSED_VARIABLE = YES;
++				HEADER_SEARCH_PATHS = "";
+ 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+ 				MTL_ENABLE_DEBUG_INFO = NO;
+ 				SDKROOT = iphoneos;
+@@ -203,32 +211,41 @@
+ 		58B511F01A9E6C8500147676 /* Debug */ = {
  			isa = XCBuildConfiguration;
  			buildSettings = {
++				CLANG_ENABLE_MODULES = YES;
  				HEADER_SEARCH_PATHS = (
 -				"$(inherited)",
 +					"$(inherited)",
  					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
- 					"$(SRCROOT)/../../../React/**",
- 					"$(SRCROOT)/../../react-native/React/**",
-+					"${SRCROOT}/../../../ios/Pods/Headers/**",
+-					"$(SRCROOT)/../../../React/**",
+-					"$(SRCROOT)/../../react-native/React/**",
++					"$(SRCROOT)/../../React/**",
++					"$(SRCROOT)/../react-native/React/**",
  				);
++				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
  				LIBRARY_SEARCH_PATHS = "$(inherited)";
  				OTHER_LDFLAGS = "-ObjC";
-@@ -224,6 +226,7 @@
+ 				PRODUCT_NAME = RNUssdDial;
+ 				SKIP_INSTALL = YES;
++				SWIFT_OBJC_BRIDGING_HEADER = "RNUssdDial-Bridging-Header.h";
++				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
++				SWIFT_VERSION = 5.0;
+ 			};
+ 			name = Debug;
+ 		};
+ 		58B511F11A9E6C8500147676 /* Release */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				CLANG_ENABLE_MODULES = YES;
+ 				HEADER_SEARCH_PATHS = (
+ 					"$(inherited)",
  					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
- 					"$(SRCROOT)/../../../React/**",
- 					"$(SRCROOT)/../../react-native/React/**",
-+					"${SRCROOT}/../../../ios/Pods/Headers/**",
+-					"$(SRCROOT)/../../../React/**",
+-					"$(SRCROOT)/../../react-native/React/**",
++					"$(SRCROOT)/../../React/**",
++					"$(SRCROOT)/../react-native/React/**",
  				);
++				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
  				LIBRARY_SEARCH_PATHS = "$(inherited)";
  				OTHER_LDFLAGS = "-ObjC";
+ 				PRODUCT_NAME = RNUssdDial;
+ 				SKIP_INSTALL = YES;
++				SWIFT_OBJC_BRIDGING_HEADER = "RNUssdDial-Bridging-Header.h";
++				SWIFT_VERSION = 5.0;
+ 			};
+ 			name = Release;
+ 		};
 diff --git a/node_modules/react-native-ussd-dial/ios/RNUssdDial.xcodeproj/xcuserdata/elvarhalilov.xcuserdatad/xcschemes/xcschememanagement.plist b/node_modules/react-native-ussd-dial/ios/RNUssdDial.xcodeproj/xcuserdata/elvarhalilov.xcuserdatad/xcschemes/xcschememanagement.plist
 new file mode 100644
 index 0000000..d117b13
